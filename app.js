@@ -33,3 +33,15 @@ function agregarLista() {
 
 
 
+function sortearAmigo() {
+   if (amigos.length === 0) {
+    alert("Agrega al menos un amigo antes de realizar el sorteo");
+    return;
+   }
+
+   let indiceAleatorio = Math.floor(Math.random() * amigos.length) //genera un índice aleatorio
+   let amigoSorteado = amigos[indiceAleatorio]; //amigoSorteado representa el indice sorteado dentro de la lista amigos
+
+   let resultado = document.getElementById("resultado"); //resultado es un <ul> en el html
+   resultado.innerHTML = `El amigo secreto es <li>${amigoSorteado}!</li>`; // muestra el nombre en la lista de resultados
+}
