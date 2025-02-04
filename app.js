@@ -5,14 +5,24 @@ function agregarAmigo() {
     let input = document.getElementById('amigo');
     let nombre = input.value.trim(); //valor sin espacios
 
+    //primera validación: nombre vacío
     if (nombre === "") {
         alert("Por favor, inserte un nombre.");
         return;
     }
 
+    // convierte el nombre a minúsculas
+    let nombreNormalizado = nombre.toLowerCase(); 
+
+    //segunda validación: nombre repetido
+    if (amigos.some(amigo => amigo.toLowerCase() === nombreNormalizado)){ //.some revisa cada elemento de amigos
+        alert("Este nombre ya está en la lista.");
+        return;
+    }
+
     amigos.push(nombre);
     input.value = ""; //limpia el input
-    console.log(amigos)
+    //console.log(amigos)
 
     agregarLista();
 }
@@ -43,5 +53,5 @@ function sortearAmigo() {
    let amigoSorteado = amigos[indiceAleatorio]; //amigoSorteado representa el indice sorteado dentro de la lista amigos
 
    let resultado = document.getElementById("resultado"); //resultado es un <ul> en el html
-   resultado.innerHTML = `El amigo secreto es <li>${amigoSorteado}!</li>`; // muestra el nombre en la lista de resultados
+   resultado.innerHTML = `¡El amigo secreto es <li>${amigoSorteado}!</li>`; // muestra el nombre en la lista de resultados
 }
