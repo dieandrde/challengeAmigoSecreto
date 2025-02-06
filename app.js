@@ -54,4 +54,8 @@ function sortearAmigo() {
 
    let resultado = document.getElementById("resultado"); //resultado es un <ul> en el html
    resultado.innerHTML = `¡El amigo secreto es <li>${amigoSorteado}!</li>`; // muestra el nombre en la lista de resultados
+
+    // Reproducir sonido
+    let audio = new Audio("assets/sound.mp3");
+    audio.play();
 }

@@ -1,12 +1,20 @@
-:root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+@keyframes glitch {
+    0% { text-shadow: 3px 3px #4B69FD, -3px -3px #fe652b; }
+    25% { text-shadow: -3px -3px #4B69FD, 3px 3px #fe652b; }
+    50% { text-shadow: 3px -3px #4B69FD, -3px 3px #fe652b; }
+    75% { text-shadow: -3px 3px #4B69FD, 3px -3px #fe652b; }
+    100% { text-shadow: 3px 3px #4B69FD, -3px -3px #fe652b; }
 }
+
+.main-title {
+    font-size: 48px;
+    font-family: "Press Start 2P", serif;
+    color: var(--color-white);
+    animation: glitch 0.5s infinite alternate;
+}
+
 
 /* Estilos generales */
 * {
@@ -15,13 +23,27 @@
     box-sizing: border-box;
 }
 
+
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    background-color:#000;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: radial-gradient(circle, #251d6f 0%, #000000 100%);
 }
+
+.info-section {
+    background-color: rgba(0, 0, 0, 0.325);
+    color: #aeaeae;
+    text-align: center;
+    padding: 20px;
+    font-family: "Tektur", sans-serif;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
 
 .main-content {
     display: flex;
@@ -30,7 +52,7 @@ body {
     width: 100%;
 }
 
-/* Banner */
+/* banner */
 .header-banner {
     flex: 40%;
     display: flex;
@@ -39,38 +61,59 @@ body {
     padding: 40px 0 0;
 }
 
-/* Sección de entrada */
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Press Start 2P", serif;
+    font-style: italic;
+    color:#7d7d7d;
+    
+}
+
+.secreto{
+    font-size: 48px;
+    font-family: "Press Start 2P", serif;
+    color:#2c097d  
+}
+
+.subtitle{
+    font-size: 18px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Tektur", serif;
+    font-weight: 700;
+    color: #838282;
+}
+
+.section-title {
+    font-family: "Tektur", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color:#a2a2a2;
+    margin: 10px 0;
+    text-align: center;
+}
+/* ====== seccion imput y botones ====== */
 .input-section {
     flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
+    background-color: #10162F;
+    border: 1px solid #4B69FD; 
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    width: 100%;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(75, 105, 253, 0.5);
 }
 
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
+.input-section h2 {
+    color: #FFF9EB; 
+    text-shadow: 0 0 5px #4B69FD;
 }
 
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
-
-/* Contenedores de entrada y botón */
 .input-wrapper {
     display: flex;
     justify-content: center;
@@ -82,32 +125,64 @@ body {
 .input-name {
     width: 100%;
     padding: 10px;
-    border: 2px solid #000;
+    border: 2px solid #4B69FD;
+    background-color: #0A0F2D;
+    color: #FFF;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
+    font-family: "Tektur", sans-serif;
 }
 
-.button-container {
-    width: 300px;
-    justify-content: center;
+.button-add {
+    background-color: #1d73db;
+    color: #FFF9EB;
+    border-radius: 0 25px 25px 0;
+    transition: 0.3s;
 }
 
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.button-add:hover {
+    background-color: #4B69FD;
+    box-shadow: 0 0 10px #4B69FD;
 }
 
-/* Estilos de botón */
+/* ====== estilo de los li ====== */
+.name-list {
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.name-list li {
+    background: rgba(10, 15, 45, 0.8);
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Tektur", sans-serif;
+    padding: 12px 20px;
+    border: 2px solid #4B69FD; 
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(75, 105, 253, 0.5);
+    animation:  0.5s;
+    transition: 0.3s;
+}
+
+/* efecto al pasar el mouse */
+.name-list li:hover {
+    box-shadow: 0 0 15px #4B69FD, 0 0 25px #fe652b;
+    transform: scale(1.05);
+}
+
+/* botones */
 button {
     padding: 15px 30px;
-    font-family: "Inter", sans-serif;
+    font-family: "Press Start 2P", serif;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 25px;
@@ -116,8 +191,8 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
+    background-color:#1d73db;
+    color:#FFF9EB;
     border-radius: 0 25px 25px 0;
 }
 
@@ -125,7 +200,7 @@ button {
     background-color: #a1a1a1;
 }
 
-/* Listas */
+/* listas */
 ul {
     list-style-type: none;
     color: var(--color-text);
@@ -136,21 +211,24 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #ff7b08;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+    font-family: "Press Start 2P", serif;
 }
 
-/* Botón de sortear título */
+/* boton sorteo */
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 90%;
     padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
+    color:#1d73db;
+    background-color:#FFF9EB;
     font-size: 16px;
+    animation:  0.5s;
+    transition: 0.3s;
 }
 
 .button-draw img {
@@ -158,5 +236,5 @@ ul {
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+    background-color:#c1c1c178;
 }
